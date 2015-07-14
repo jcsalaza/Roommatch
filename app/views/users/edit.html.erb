@@ -1,0 +1,60 @@
+<h2>Profile Information</h2>
+<%= form_for @user, method: :patch do |f| %>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :hometown %><br />
+    <%= f.text_field :hometown %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :grad_year %><br />
+    <%= f.text_field :grad_year %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :move_in_date %><br />
+    <%= f.text_field :move_in_date %>
+  </div>
+  <div class="field">
+    <%= f.label :bedrooms %><br />
+    <%= f.text_field :bedrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :budget %><br />
+    <%= f.text_field :budget %>
+  </div>
+  <div class="field">
+    <%= f.label :smoking_preference %><br />
+    <%= f.text_field :smoking_preference %>
+  </div>
+  <div class="field">
+    <%= f.label :drinking_preference %><br />
+    <%= f.text_field :drinking_preference %>
+  </div>
+  <div class="field">
+    <%= f.label :cleanliness %><br />
+    <%= f.text_field :cleanliness %>
+  </div>
+  <%= f.submit "Update Profile" %>
+<% end %>

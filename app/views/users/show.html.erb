@@ -1,0 +1,12 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<p>Here's where a picture will be for User number <%= @user.id %></p>
+<% if @user.id == current_user.id %>
+  <%= link_to "Edit Profile Information", edit_user_path(@user) %>
+<% end %>
+<ul>
+  <li>Age: <%= @user.age %></li>
+  <li>Hometown: <%= @user.hometown %></li>
+  <li>College/University: <%= @user.school %></li>
+  <li>Studying abroad in <%= @user.city %> starting <%= @user.move_in_date %></li>
+</ul>
+<!-- this is where you'll list all of the info -->

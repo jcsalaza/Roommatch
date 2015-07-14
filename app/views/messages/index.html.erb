@@ -1,0 +1,11 @@
+<h1> 
+  <%= "#{@user.first_name}'s Messages" %>
+</h1>
+<% if @user.received_messages.size == 0 %>
+  <p>No messages found, senor.</p>
+<% end %>
+<ul>
+  <% @user.received_messages.each do |message| %>
+  <li><%= message.content %></li>
+  <% end %>
+</ul>
