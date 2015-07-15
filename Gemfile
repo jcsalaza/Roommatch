@@ -37,7 +37,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
-# gem 'pg'
+gem 'pg'
 
 # Use unicorn as the app server
 # gem 'unicorn'

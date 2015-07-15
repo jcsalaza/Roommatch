@@ -21,12 +21,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
-  # adapter: postgresql
-  # encoding: utf8
-  # database: mailboxer_production
-  # pool: 5
-  # username: 
-  # password:
+  # <<: *default
+  # database: db/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: mailboxer_production
+  pool: 5
+  username: 
+  password:
 # NOTICE! - delete the default specs and uncomment these ones if you add postgres as the DB by uncommenting it in the Gemfile!
