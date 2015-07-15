@@ -1,11 +1,19 @@
 <h1> 
   <%= "#{@user.first_name}'s Messages" %>
 </h1>
-<% if @user.received_messages.size == 0 %>
-  <p>No messages found, senor.</p>
-<% end %>
-<ul>
-  <% @user.received_messages.each do |message| %>
-  <li><%= message.content %></li>
-  <% end %>
-</ul>
+<%= render current_user.mailbox.inbox %>
+
+<div class="container">
+  <div class ="well">
+    <% @conversations.each do |conversation| %>
+      <ol class="posts">
+  <li>
+    <p><%= conversation.subject %></p>
+    <p><%= conversation.created_at%></p>
+
+  </li>
+    <% end %>
+  </div>
+
+  <%= link_to 'My Conversations', :conversations %>
+</div>

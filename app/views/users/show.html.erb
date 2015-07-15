@@ -7,11 +7,11 @@
   <li>Age: <%= @user.age %></li>
   <li>Hometown: <%= @user.hometown %></li>
   <li>College/University: <%= @user.school %></li>
-  <li>Studying abroad in <%= @user.city %> starting <%= @user.move_in_date %></li>
+  <li>Studying abroad in <%= @user.city %> starting <%= @user.move_in_date.strftime("%m/%d/%Y") %></li>
 </ul>
 <% if @user.id != current_user.id %>
 <button>
-  <%= link_to "Send Message", new_message_path %>
+  <%= link_to "Send Message", new_message_path(:user => @user.id) %>
 </button>
 <% end %>
 <!-- this is where you'll list all of the info -->

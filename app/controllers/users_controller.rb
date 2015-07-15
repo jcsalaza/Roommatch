@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per_page(25)
   end
   
   def new
@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
+    @users = User.all
   end
 
   def update

@@ -31,6 +31,14 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'mailboxer'
+
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem 'will_paginate-bootstrap'
+gem 'font-awesome-rails'
+# gem 'pg'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

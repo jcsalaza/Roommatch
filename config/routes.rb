@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'users/edit' => 'users#edit'
   patch 'users/edit' => 'users#update'
 
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -23,7 +22,27 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :users
-  resources :messages
+  # resources :messages
+
+
+  get "/messages" => redirect("/conversations")
+  resources :messages do
+    member do
+      post :new
+    end
+  end
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+    collection do
+      get :trashbin
+      post :empty_trash
+    end
+  end
+
 
   # Example resource route with options:
   #   resources :products do
