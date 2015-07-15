@@ -1,9 +1,14 @@
-<h1>All Users</h1>
-<% @users.each do |user| %>
 <div>
-  <%= "This is #{user.first_name} #{user.last_name}" %>
-  <%= user.school %>
-  <%= user.city %>
-  <%= link_to "View Profile", user_path(user) %>
+  <h1>All Users</h1>
+  <% @users.each do |user| %>
+  <div>
+    <%= "This is #{user.first_name} #{user.last_name}" %>
+    <%= user.school %>
+    <%= user.city %>
+    <%= link_to "View Profile", user_path(user) %>
+  </div>
+  <% end %>
+
+  <%= will_paginate @users %>
+
 </div>
-<% end %>
