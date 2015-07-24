@@ -1,3 +1,76 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcome-banner {
+  text-align: center;
+}
+
+//slideshow CSS
+
+.css-slideshow{
+   position: relative;
+   max-width: 495px;
+   height: 370px;
+   margin: .5em auto .5em auto;
+   background-color: #12c3f3;
+}
+.css-slideshow figure{
+   margin: 0;
+   position: absolute;
+}
+.css-slideshow figcaption{
+   position: absolute;
+   top: 0;
+   color: #fff;
+   background: rgba(0,0,0, .3);
+   font-size: .8em;
+   padding: 8px 12px;
+   opacity: 0;
+   transition: opacity .5s;
+}
+.css-slideshow:hover figure figcaption{
+   transition: opacity .5s;
+   opacity: 1;
+}
+.css-slideshow figure{
+   opacity:0;
+}
+
+// timing of animation
+
+figure:nth-child(1) {
+   animation: xfade 25s 20s infinite;
+}
+figure:nth-child(2) {
+   animation: xfade 25s 15s infinite;
+}
+figure:nth-child(3) {
+   animation: xfade 25s 10s infinite;
+}
+figure:nth-child(4) {
+   animation: xfade 25s 5s infinite;
+}
+figure:nth-child(5) {
+   animation: xfade 25s 0s infinite;
+}
+
+// Opacity of animation
+
+@keyframes xfade{
+   0%{
+      opacity: 1;
+   }
+   10.5% {
+      opacity:1;
+   }
+   12.5%{
+      opacity: 0;
+   }
+   98% {
+      opacity:0;
+   }
+   100% {
+      opacity:1;
+   }
+}
