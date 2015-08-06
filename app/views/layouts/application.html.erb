@@ -7,20 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '884729161620453',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <nav class="navbar navbar-default" style="margin-bottom:0">
 <ul class="nav nav-pills">
 
   <% if user_signed_in? %>
   <p class="navbar-text">Logged in as <strong><%= current_user.email %></strong></p>
-  <%= link_to 'Edit Account', edit_user_registration_path, :class => 'navbar-link' %>
-  <%= link_to 'My Account', user_path(User.find(current_user.id)), :class => 'navbar-link' %>
-  <%= link_to 'Inbox', conversations_path %>
-  <%= link_to 'Search', users_path, :class => 'navbar-link' %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <li role="presentation"><%= link_to 'Edit Account', edit_user_registration_path, :class => 'navbar-link' %></li>
+  <li role="presentation"><%= link_to 'My Account', user_path(User.find(current_user.id)), :class => 'navbar-link' %></li>
+  <li role="presentation"><%= link_to 'Inbox', conversations_path %></li>
+  <li role="presentation"><%= link_to 'Search', users_path, :class => 'navbar-link' %></li>
+  <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 <% else %>
   <li role="presentation"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
   <li role="presentation"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
 <% end %>
+
+<!-- <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true" style="float:right;"></div> -->
 
 </ul>
 </nav>
