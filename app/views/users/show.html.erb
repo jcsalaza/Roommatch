@@ -1,4 +1,5 @@
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<div><%= image_tag(@user.image) %></div>
 <p>Here's where a picture will be for User number <%= @user.id %></p>
 <% if @user.id == current_user.id %>
   <%= link_to "Edit Profile Information", edit_user_path(@user) %>

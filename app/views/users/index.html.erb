@@ -5,6 +5,7 @@
     <%= "This is #{user.first_name} #{user.last_name}" %>
     <%= user.school %>
     <%= user.city %>
+    <%= image_tag(user.image) %>
     <%= link_to "View Profile", user_path(user) %>
   </div>
   <% end %>
