@@ -17,3 +17,52 @@
 @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body{
+  font-family:Lato,Helvetica;  
+}
+
+header li {
+  display: inline;
+  color:white;
+  font-family:Lato,Helvetica;
+}
+
+nav li {
+  color:white;
+  font-family:Lato,Helvetica;
+  text-transform:uppercase;
+}
+
+nav li a{
+  color:white;
+}
+
+header {
+  padding: 1em;  
+}
+
+#header-logo {
+  float:left;
+}
+
+.header-contact {
+  float:right;
+}
+
+
+
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

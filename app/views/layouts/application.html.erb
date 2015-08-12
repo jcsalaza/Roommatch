@@ -5,28 +5,57 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '884729161620453',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 </head>
 <body>
+<header class='clearfix'>
+  <div id='header-logo'>
+    <a href="#"><img src="http://www.studyabroadapartments.com/wp-content/themes/study_abroad/assets/images/logo.png" alt="Study Abroad Apartments"></a>
+  </div>
+    <div class="header-contact">
 
-<script>
-//   window.fbAsyncInit = function() {
-//     FB.init({
-//       appId      : '884729161620453',
-//       xfbml      : true,
-//       version    : 'v2.4'
-//     });
-//   };
+      <ul class="social-networks">
+        <li class="facebook">
+          <a rel="external" title="facebook" target="_blank" href="https://www.facebook.com/studyabroadapartments">
+            <i class="fa fa-facebook-square fa-2x"></i>
+          </a>
+        </li>
+        <li class="twitter">
+          <a rel="external" title="twitter" target="_blank" href="https://twitter.com/StudyAbroadAPTS">
+            <i class="fa fa-twitter-square fa-2x"></i>
+          </a>
+        </li>
+        <li class="google-plus">
+          <a rel="external" title="google-plus" target="_blank" href="https://plus.google.com/+Studyabroadapartments/posts">
+            <i class="fa fa-google-plus-square fa-2x"></i>
+          </a>
+        </li>
+      </ul>
 
-//   (function(d, s, id){
-//      var js, fjs = d.getElementsByTagName(s)[0];
-//      if (d.getElementById(id)) {return;}
-//      js = d.createElement(s); js.id = id;
-//      js.src = "//connect.facebook.net/en_US/sdk.js";
-//      fjs.parentNode.insertBefore(js, fjs);
-//    }(document, 'script', 'facebook-jssdk'));
-// </script>
+      <div class="email"><i class="fa fa-envelope fa-lg"></i> info@studyabroadapartments.com</div>
+      <div class="phone"><i class="fa fa-phone fa-lg"></i> 847-595-1429</div>
+    </div>
+</header>
 
-<nav class="navbar navbar-default" style="margin-bottom:0">
+<nav class="navbar navbar-default" style="margin-bottom:0;background-color:#12C3F3;">
 <ul class="nav nav-pills">
 
 <% if user_signed_in? %>
@@ -35,8 +64,8 @@
   <li role="presentation"><%= link_to 'Search', users_path, :class => 'navbar-link' %></li>
   <li role="presentation" style="float:right;"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 <% else %>
-  <li role="presentation"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-  <li role="presentation"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+  <li role="presentation"><%= link_to "Sign up", new_user_registration_path %></li>
+  <li role="presentation"><%= link_to "Login", new_user_session_path %></li>
   <li role="presentation"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
 <% end %>
 
@@ -55,6 +84,66 @@
 
 <%= yield %>
 
+<!-- footer from SAA site -->
+<footer>
+
+  <div class="column small-12 medium-4">
+    <a href="http://www.studyabroadapartments.com"><img src="http://www.studyabroadapartments.com/wp-content/themes/study_abroad/assets/images/logo-light.png"></a>
+  </div>
+
+  <div class="column small-12 medium-4">
+    <h3>Study Abroad Apartments LLC</h3></span>
+    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+      <span itemprop="streetAddress">115 W. 18th St., 2nd Floor</span><br><span itemprop="addressLocality">New York</span>,
+      <span itemprop="addressRegion">NY</span>
+      <span itemprop="postalCode">10011</span>
+      <a href="mailto:info@studyabroadapartments.com">info@studyabroadapartments.com</a><br>
+    </div>
+        Phone: <span itemprop="telephone">847-595-1429</span>
+  </div>
+</div>
+  <!-- start of FB and G+ widgets; can and should probably be replaced with SDK -->
+          <aside id="text-14" class="widget widget_text">     <div class="textwidget">
+          <div class="fb-like fb_iframe_widget" data-href="" data-layout="button" data-action="like" data-show-faces="false" data-share="false" style="display: inline-block; vertical-align: top;" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fwww.studyabroadapartments.com%2Ffind-a-roommate%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 49px; height: 20px;"><iframe name="f4c1bf544" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/plugins/like.php?action=like&amp;app_id=&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FBhKMRj1sUPu.js%3Fversion%3D41%23cb%3Df20e981b14%26domain%3Dwww.studyabroadapartments.com%26origin%3Dhttp%253A%252F%252Fwww.studyabroadapartments.com%252Ff3fd425d64%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.studyabroadapartments.com%2Ffind-a-roommate%2F&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 49px; height: 20px;" class=""></iframe></span></div> 
+          <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1438955874599" name="I0_1438955874599" src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;annotation=bubble&amp;origin=http%3A%2F%2Fwww.studyabroadapartments.com&amp;url=http%3A%2F%2Fwww.studyabroadapartments.com%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.1lmzqVoD9S0.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCO2267ZNpVcsAhH4HI5tKgzeP5Brw#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1438955874599&amp;parent=http%3A%2F%2Fwww.studyabroadapartments.com&amp;pfname=&amp;rpctoken=48621663" data-gapiattached="true" title="+1"></iframe></div>
+          </div>
+              </aside>                </div>
+
+      <!-- end of FB and G+ widgets -->
+
+<div class="column small-12 medium-2">
+  <h3 class="widget-title">Company</h3>
+  <div class="menu-footer-container">
+    <ul id="menu-footer" class="menu">
+      <li><a href="http://www.studyabroadapartments.com/">Home</a></li>
+      <li><a href="http://www.studyabroadapartments.com/contact/">Contact</a></li>
+      <li><a href="http://www.studyabroadapartments.com/gallery/">Gallery</a></li>
+      <li><a href="http://www.iubenda.com/privacy-policy/970903">Privacy Policy</a></li>
+      <li><a href="http://www.studyabroadapartments.com/sitemap/">Sitemap</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="column small-12 medium-2">
+  <h3 class="widget-title">Get Started</h3>
+  <div class="menu-footer-right-container">
+    <ul id="menu-footer-right" class="menu">
+      <li><a href="http://www.studyabroadapartments.com/about-us/">About Us</a></li>
+      <li><a href="http://www.studyabroadapartments.com/how-it-works/">How It Works</a></li>
+      <li><a href="http://www.studyabroadapartments.com/resources/">Resources</a></li>
+      <li><a href="http://www.studyabroadapartments.com/blog/">Blog</a></li>
+      <li><a href="http://www.studyabroadapartments.com/example-contracts/">Example Contracts</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="site-footer__copyright column small-12">
+  © 2015 <a href="http://www.studyabroadapartments.com">Study Abroad Apartments</a>.  <a href="http://www.studyabroadapartments.com/terms-and-conditions/" title="Terms And Conditions">Terms And Conditions</a>
+  </div>
+
+
+</footer>
+<!-- footer end -->
 
 </body>
 </html>
