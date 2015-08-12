@@ -28,10 +28,15 @@ header li {
   font-family:Lato,Helvetica;
 }
 
+nav ul {
+  margin-left: 8%;
+}
+
 nav li {
   color:white;
   font-family:Lato,Helvetica;
   text-transform:uppercase;
+  padding-left: 10px;
 }
 
 nav li a{
@@ -50,6 +55,38 @@ header {
   float:right;
 }
 
+footer {
+  background-color: #4D4D4D;
+  padding: 2%;
+  height: 18em;
+}
+
+footer h3 {
+  color: white;
+}
+
+footer a {
+  color: #929191;
+}
+
+#address {
+  color:white;
+}
+
+footer ul {
+  list-style-type:none;
+  padding-left:0;
+}
+
+footer ul li {
+  border-bottom-style: dotted;
+}
+
+site-footer__copyright {
+  margin-top: 10px;
+  position: fixed;
+  bottom:0;
+}
 
 
 
