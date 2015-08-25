@@ -10,7 +10,7 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :image, "Paste a URL for your profile image" %><br />
+    <%= f.label :image, "Paste a URL for your profile image (Note: This will be your Facebook picture's URL already if you are logged in.)" %><br />
     <%= f.text_field :image %>
   </div>
   <div class="field">
@@ -19,7 +19,7 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= f.select :gender, [['Male','Male'],['Female','Female']] %>
   </div>
   <div class="field">
     <%= f.label :hometown %><br />
@@ -31,7 +31,7 @@
   </div>
   <div class="field">
     <%= f.label :grad_year %><br />
-    <%= f.text_field :grad_year %>
+    <%= f.select :grad_year, (Time.zone.now.year - 10)..(Time.zone.now.year + 10) %>
   </div>
   <div class="field">
     <%= f.label :city %><br />
@@ -43,23 +43,23 @@
   </div>
   <div class="field">
     <%= f.label :bedrooms %><br />
-    <%= f.text_field :bedrooms %>
+    <%= f.select :bedrooms, [['Studio','Studio'],['One','One'],['Two','Two'],['Three','Three'],['Four','Four']] %>
   </div>
   <div class="field">
     <%= f.label :budget %><br />
-    <%= f.text_field :budget %>
+    <%= f.select :budget, [['No Preference','Flexible budget'],['$500-$600','$500-$600'],['$600-$700','$600-$700'],['$700-$800','$700-$800'],['$800-$900','$800-$900'],['$900-$1000','$900-1000'],['$1000-$1100','$1000-$1100'],['$1100-$1200','$1100-$1200'],['$1200-$1300','$1200-$1300'],['$1300-$1400','$1300-$1400'],['$1400-$1500','$1400-1500']] %>
   </div>
   <div class="field">
     <%= f.label :smoking_preference %><br />
-    <%= f.text_field :smoking_preference %>
+    <%= f.select :smoking_preference, [['No Preference','No Preference'],['No Smoking!','No Smoking!'],['Smoking Allowed','Smoking Allowed']] %>
   </div>
   <div class="field">
     <%= f.label :drinking_preference %><br />
-    <%= f.text_field :drinking_preference %>
+    <%= f.select :drinking_preference, [['No Preference','No Preference'],['I would rather not drink','I would rather not drink'],['Party animal','Party animal']] %>
   </div>
   <div class="field">
     <%= f.label :cleanliness %><br />
-    <%= f.text_field :cleanliness %>
+    <%= f.select :cleanliness, [['No Preference','No Preference'],['A messy room is fine','A messy room is fine'],['Clean freak and proud of it','Clean freak and proud of it']] %>
   </div>
   <%= f.submit "Update Profile" %>
 <% end %>
