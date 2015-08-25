@@ -4,11 +4,12 @@
 
 #welcome-banner {
   text-align: center;
-  margin-bottom: 5em;
+  margin-bottom: 1em;
 }
 
 #buttons a {
    margin-left: 2em;
+   z-index: 1;
 }
 
 //slideshow CSS
@@ -17,7 +18,7 @@
    position: relative;
    max-width: 495px;
    height: 370px;
-   margin: .5em auto .5em auto;
+   margin: 5em auto .5em auto;
    background-color: #12c3f3;
 }
 .css-slideshow figure{
