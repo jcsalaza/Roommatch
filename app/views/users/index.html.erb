@@ -13,7 +13,7 @@
             <span style="font-size:2.8em;" class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </div>  
           <% end %>
-          <h4><%= "#{user.first_name} #{user.last_name}" %></h4><br>
+          <h4><%= "#{user.first_name} #{user.last_name}" %></h4>
         </div>
         <div class="col-md-4">
           <% if user.hometown && user.school && user.city != "" %> 
@@ -34,3 +34,6 @@
   <%= will_paginate @users %>
 
 </div>
+
+<!-- One missing feature still is displaying the number of the mutual friends when logged in w/ FB... The only thing I could think of was assign all user_friends returned by FB to each user object and then find the similarities in those arrays and display the count. -->
+<!-- Last thing is either filters (hide/show using jQuery depending on radio buttons that are checked maybe?) or fuzzy search (good examples would be Fuse.js or Fuzzily) -->
