@@ -6,7 +6,7 @@
       <div id="user-wrapper" class="col-md-12">
       <div class="col-md-1"></div>
         <div class="col-md-3">
-          <% if user.image != "" %>
+          <% if @user.image && @user.image != ("" || " ") %>
             <%= image_tag(user.image, class: "img-responsive img-thumbnail", width: "55", height: "55") %>
           <% else %>
             <div class="thumbnail" style="width: 50px; height: 50px;">
